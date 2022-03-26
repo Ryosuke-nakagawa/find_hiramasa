@@ -1,24 +1,13 @@
-# README
+# ヒラマサを探せ!！
+# サービス概要
+君はヒラマサとブリの見分けがつくか!?これが分かればヒラマサマスター!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# ユーザーが抱える課題
+ブリは釣ったことがあるが、ヒラマサを釣ったことがなく、釣るたびに友達に「これはヒラマサじゃないよね？」って聞いてしまう（作者）
 
-Things you may want to cover:
+# 解決方法
+このアプリで特徴を覚える・瞬時に見分ける技術を身につける。
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 実装機能
+・ブリとヒラマサの見分けゲーム
+・見分けポイントレクチャー
