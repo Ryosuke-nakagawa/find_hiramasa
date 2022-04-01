@@ -11,5 +11,10 @@ body {
 }
 
 .fish{
-    position:relative;
+    position:absolute;
+}
+
+.container{
+  height: 100vh; /* 変数をサポートしていないブラウザのフォールバック */
+  height: calc(var(--vh, 1vh) * 100);
 }
