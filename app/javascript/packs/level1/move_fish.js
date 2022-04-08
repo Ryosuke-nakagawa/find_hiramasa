@@ -61,11 +61,17 @@ document.addEventListener('turbolinks:load', function() {
 
   // ###### 魚をクリックでアクション ######
   $('#hiramasa').on('click', function() {
-    alert("clear!!!!")
-    resultmodalTitle.innerText = '天才目利き漁師'
-    resultmodalBody.innerHTML =
-      '<p>お前ぶち凄いのぅ!</p>\
-      <p>わしゃぁ感激じゃ!!!<p/>'
+    if (angryCount === 0){
+      resultmodalTitle.innerText = '天才目利き漁師'
+      resultmodalBody.innerHTML =
+        '<p>お前ぶち凄いのぅ!</p>\
+        <p>わしゃぁ感激じゃ!!!<p/>'
+    }else{
+      resultmodalTitle.innerText = 'まぁまぁ目利き漁師'
+      resultmodalBody.innerHTML =
+        '<p>まぁまぁじゃのぅ</p>\
+        <p>一発で決めて欲しかったのぉ<p/>'
+    }
     $('#resultModal').show();
   });
   var buriElements = document.querySelectorAll(".buri");// NodeListとして取得
@@ -92,7 +98,6 @@ document.addEventListener('turbolinks:load', function() {
           angryCount += 1
           break;
         case 2:
-          alert("gameover");
           resultmodalTitle.innerText = 'そりゃブリじゃ'
           resultmodalBody.innerHTML =
             '<p>なんべんも言うたろう?</p>\
