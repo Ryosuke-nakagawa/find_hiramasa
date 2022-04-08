@@ -11,7 +11,8 @@ var getRandomInt = function(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-window.onload = function() {
+document.addEventListener('turbolinks:load', function() {
+
   // ########  魚の画像要素の高さをランダムに変更  #########
     // 要素の取得
   var $container = $('.container'),
@@ -19,7 +20,7 @@ window.onload = function() {
   containerWidth = $container.width(),
   containerHeight = $container.height();
   
-    // fishそれぞれをランダムに配置
+    // 魚をそれぞれをランダムに配置
   $.map($fish, function(item) {
     var $item = $(item), // fishのli要素が1番目から順に入ってきます
     topPos = getRandomInt(130, containerHeight), // 0〜500の間でtopの座標を取得
@@ -31,7 +32,7 @@ window.onload = function() {
     });
   });
 
-  // ###### fishを泳がせる ######
+  // ###### 魚を泳がせる ######
   var fishElements = document.querySelectorAll(".fish");
   fishElements.forEach(fish => {
     anime.speed = Math.random() * 0.5 + 0.5;
@@ -49,14 +50,33 @@ window.onload = function() {
     });
   })
 
+  // 開始時のmodalWindow操作
+  $('#start').on('click', function() {
+    $('#startModal').hide()
+  });
+
+  // 結果時のモーダル
+  const resultmodalTitle = document.getElementById("resultModalTitle");
+  const resultmodalBody = document.getElementById("resultModalBody");
+
   // ###### 魚をクリックでアクション ######
   $('#hiramasa').on('click', function() {
-    $('#angry').hide();
-    $('#man').show();
-  }); 
-  var elements = document.querySelectorAll(".buri");// NodeListとして取得
+    if (angryCount === 0){
+      resultmodalTitle.innerText = '天才目利き漁師'
+      resultmodalBody.innerHTML =
+        '<p>お前ぶち凄いのぅ!</p>\
+        <p>わしゃぁ感激じゃ!!!<p/>'
+    }else{
+      resultmodalTitle.innerText = 'まぁまぁ目利き漁師'
+      resultmodalBody.innerHTML =
+        '<p>まぁまぁじゃのぅ</p>\
+        <p>一発で決めて欲しかったのぉ<p/>'
+    }
+    $('#resultModal').show();
+  });
+  var buriElements = document.querySelectorAll(".buri");// NodeListとして取得
   var angryCount = 0;
-  elements.forEach(elm => {
+  buriElements.forEach(elm => {
     elm.addEventListener('click', function(){
       switch (angryCount) {
         case 0:
@@ -78,11 +98,12 @@ window.onload = function() {
           angryCount += 1
           break;
         case 2:
-          alert("gameover");
+          resultmodalTitle.innerText = 'そりゃブリじゃ'
+          resultmodalBody.innerHTML =
+            '<p>なんべんも言うたろう?</p>\
+            <p>もう一回やってみぃ!<p/>'
+          $('#resultModal').show();
       }
-      
     });
   });
-
-
-}
+})
