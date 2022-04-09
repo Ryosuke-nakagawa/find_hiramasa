@@ -39,7 +39,7 @@ $(window).on("load",function(){
       targets: fish,
       translateX: 1000,//移動距離
       loop: true,//繰り返し
-      duration: getRandomInt(1000,5000),//どのくらいアニメーションを継続するか
+      duration: getRandomInt(1500,5000),//どのくらいアニメーションを継続するか
       easing: 'easeInQuad',//動き
       delay: getRandomInt(0,300),//遅延
       loopComplete: function(anim) {
