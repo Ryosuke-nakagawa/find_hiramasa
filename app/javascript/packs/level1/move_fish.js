@@ -34,7 +34,7 @@ $(window).on("load",function(){
   // ###### 魚を泳がせる ######
   var fishElements = document.querySelectorAll(".fish");
   fishElements.forEach(fish => {
-    anime.speed = Math.random() * 0.5 + 0.5;
+    anime.speed = 0.6;
     anime({
       targets: fish,
       translateX: 1000,//移動距離
