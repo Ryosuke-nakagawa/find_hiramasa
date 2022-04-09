@@ -4,4 +4,7 @@ class PlayController < ApplicationController
 
   def level1
   end
+
+  def level2
+  end
 end

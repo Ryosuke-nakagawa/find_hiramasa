@@ -34,12 +34,12 @@ $(window).on("load",function(){
   // ###### 魚を泳がせる ######
   var fishElements = document.querySelectorAll(".fish");
   fishElements.forEach(fish => {
-    anime.speed = 0.6;
+    anime.speed = 0.75;
     anime({
       targets: fish,
       translateX: 1000,//移動距離
       loop: true,//繰り返し
-      duration: getRandomInt(1500,5000),//どのくらいアニメーションを継続するか
+      duration: getRandomInt(1000,3000),//どのくらいアニメーションを継続するか
       easing: 'easeInQuad',//動き
       delay: getRandomInt(0,300),//遅延
       loopComplete: function(anim) {
