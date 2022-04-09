@@ -1,3 +1,26 @@
-<div class= 'pt-5'>
-  <%= link_to 'レベル1', play_level1_path, class: 'btn btn-primary'  %>
+<div class= 'container'>
+  <div class='py-5 title'>
+    <%= image_tag ('title.png'), width: '100%', class: 'py-5' %>
+    <p class='text-center'>ブリの群れからヒラマサを探すゲーム<p/>
+  </div>
+  <div class='py-5 select-btn'>
+    <div class='row text-center'>
+      <div class='col-6 pb-5'>
+        <%= link_to '緩流(やさしい)', play_level1_path, class: 'btn btn-primary' %>
+      </div>
+      <div class='col-6 pb-5'>
+        <%= link_to '激流(むずかしい)', play_level1_path, class: 'btn btn-primary' %>
+      </div>
+      <div class='col-12'>
+        <button type='button' class='btn btn-info' >海の中をのぞく</button>
+      </div>
+  </div>
+  <%= image_tag ('buri.png'), size: '175x50', id: 'buri', class: 'left-start fish' %>
+  <%= image_tag ('squid.png'), size: '130x70', id: 'squid', class: 'fish' %>
+  <%= image_tag ('red_fish.png'), size: '130x70', id: 'red-fish', class: 'right-start fish' %>
+  <%= image_tag ('eye_fish.png'), size: '100x50', id: 'eye-fish', class: 'right-start fish' %>
+  <%= image_tag ('aji.png'), size: '140x50', id: 'aji', class: 'right-start fish' %>
+  <%= image_tag ('octopus.png'), size: '130x70', id: 'octopus', class: 'fish' %>
 </div>
+
+<%= javascript_pack_tag 'home/move_fish' %>
