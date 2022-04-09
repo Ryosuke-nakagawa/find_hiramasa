@@ -1,17 +1,16 @@
-
 import anime from "animejs"
 
-// ####  画面高さ設定  ####
-  let vh = window.innerHeight * 0.01;
-  // カスタム変数--vhの値をドキュメントのルートに設定
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
+$(window).on("load",function(){
 
-// 引数で渡した範囲内のランダムな整数を生成するための関数
-var getRandomInt = function(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-};
+  // ####  画面高さ設定  ####
+    let vh = window.innerHeight * 0.01;
+    // カスタム変数--vhの値をドキュメントのルートに設定
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-document.addEventListener('turbolinks:load', function() {
+  // 引数で渡した範囲内のランダムな整数を生成するための関数
+  var getRandomInt = function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  };
 
   // ########  魚の画像要素の高さをランダムに変更  #########
     // 要素の取得
@@ -40,7 +39,7 @@ document.addEventListener('turbolinks:load', function() {
       targets: fish,
       translateX: 1000,//移動距離
       loop: true,//繰り返し
-      duration: getRandomInt(1000,5000),//どのくらいアニメーションを継続するか
+      duration: getRandomInt(1500,5000),//どのくらいアニメーションを継続するか
       easing: 'easeInQuad',//動き
       delay: getRandomInt(0,300),//遅延
       loopComplete: function(anim) {
