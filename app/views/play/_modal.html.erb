@@ -9,13 +9,22 @@
   </div>
 </div>
 
-<div class='modal-dialog' id= 'resultModal'  style="display: none;">
+<div class='modal-dialog hidden' id= 'resultModal'>
   <div class='modal-bg'>
     <div class= 'modal-content'>
       <div class='row p-3'>
-        <p class='result-title text-center' id= 'resultModalTitle'></p>
-        <p class='result-body text-center' id= 'resultModalBody'></p>
-        <%= link_to 'トップページへ戻る', root_path, class: 'btn btn-primary' %>
+        <div class='border rounded'>
+          <p class='result-title text-center' id= 'resultModalTitle'></p>
+          <p class='result-body text-center' id= 'resultModalBody'></p>
+        </div>
+        <div id='share-button' class='hidden text-center my-3'>
+          <p>↓Twitterで結果をシェアしてみてね↓</p>
+          <div class='tweet'>
+            <button class="twitter-share-button"><i class="fab fa-twitter"></i>ツイートする</button>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
+        </div>
+        <%= link_to 'トップページへ戻る', root_path, class: 'btn btn-info' %>
       </div>
     </div>
   </div>

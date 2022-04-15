@@ -51,7 +51,7 @@ $(window).on("load",function(){
 
   // 開始時のmodalWindow操作
   $('#start').on('click', function() {
-    $('#startModal').hide()
+    $('#startModal').addClass('hidden');
   });
 
   // 結果時のモーダル
@@ -61,17 +61,18 @@ $(window).on("load",function(){
   // ###### 魚をクリックでアクション ######
   $('#hiramasa').on('click', function() {
     if (angryCount === 0){
-      resultmodalTitle.innerText = '天才目利き漁師'
+      resultmodalTitle.innerText = '目利き釣り人'
       resultmodalBody.innerHTML =
-        '<p>お前ぶち凄いのぅ!</p>\
-        <p>わしゃぁ感激じゃ!!!<p/>'
+        '<p>お前やるのぅ!</p>\
+        <p>次は激流も挑戦じゃ!!!<p/>'
     }else{
-      resultmodalTitle.innerText = 'まぁまぁ目利き漁師'
+      resultmodalTitle.innerText = 'アマチュア釣り人'
       resultmodalBody.innerHTML =
         '<p>まぁまぁじゃのぅ</p>\
         <p>一発で決めて欲しかったのぉ<p/>'
     }
-    $('#resultModal').show();
+    $('#resultModal').removeClass('hidden');
+    $('#share-button').removeClass('hidden');
   });
   var buriElements = document.querySelectorAll(".buri");// NodeListとして取得
   var angryCount = 0;
@@ -101,7 +102,7 @@ $(window).on("load",function(){
           resultmodalBody.innerHTML =
             '<p>なんべんも言うたろう?</p>\
             <p>もう一回やってみぃ!<p/>'
-          $('#resultModal').show();
+          $('#resultModal').removeClass('hidden');
       }
     });
   });
