@@ -19,7 +19,10 @@
         </div>
         <div id='share-button' class='hidden text-center my-3'>
           <p>↓Twitterで結果をシェアしてみてね↓</p>
-          <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <div class='tweet'>
+            <button class="twitter-share-button"><i class="fab fa-twitter"></i>ツイートする</button>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          </div>
         </div>
         <%= link_to 'トップページへ戻る', root_path, class: 'btn btn-info' %>
       </div>

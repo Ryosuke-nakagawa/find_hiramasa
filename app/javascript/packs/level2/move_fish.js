@@ -51,7 +51,7 @@ $(window).on("load",function(){
 
   // 開始時のmodalWindow操作
   $('#start').on('click', function() {
-    $('#startModal').hide()
+    $('#startModal').addClass('hidden')
   });
 
   // 結果時のモーダル
@@ -71,7 +71,8 @@ $(window).on("load",function(){
         '<p>まぁまぁじゃのぅ</p>\
         <p>一発で決めて欲しかったのぉ<p/>'
     }
-    $('#resultModal').show();
+    $('#resultModal').removeClass('hidden');
+    $('#share-button').removeClass('hidden');
   });
   var buriElements = document.querySelectorAll(".buri");// NodeListとして取得
   var angryCount = 0;
@@ -101,7 +102,7 @@ $(window).on("load",function(){
           resultmodalBody.innerHTML =
             '<p>なんべんも言うたろう?</p>\
             <p>もう一回やってみぃ!<p/>'
-          $('#resultModal').show();
+          $('#resultModal').removeClass('hidden');
       }
     });
   });
