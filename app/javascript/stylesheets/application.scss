@@ -18,6 +18,7 @@
 
 .fish{
   position: absolute;
+  z-index: 10;
 }
 
 .hidden {
@@ -45,4 +46,9 @@
 
 .fa-twitter {
   font-size: 26px;
+}
+
+.home-item{
+  position: relative;
+  z-index: 20;
 }

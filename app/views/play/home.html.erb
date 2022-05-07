@@ -1,9 +1,9 @@
 <div class= 'container'>
-  <div class='py-5 title'>
+  <div class='py-5 title home-item'>
     <%= image_tag ('title.png'), width: '100%', class: 'py-5' %>
     <p class='text-center'>ブリの群れからヒラマサを探すゲーム<p/>
   </div>
-  <div class='py-5 select-btn'>
+  <div class='py-5 select-btn home-item'>
     <div class='row text-center'>
       <div class='col-6 pb-5'>
         <%= link_to '緩流(やさしい)', play_level1_path, class: 'btn btn-primary' %>
@@ -12,8 +12,12 @@
         <%= link_to '激流(むずかしい)', play_level2_path, class: 'btn btn-primary' %>
       </div>
       <div class='col-12'>
-        <button type='button' class='btn btn-info' >海の中をのぞく</button>
+        <button type='button' class='btn btn-info' id='look-into-sea' >海の中をのぞく</button>
       </div>
+    </div>
+  </div>
+  <div class='back-btn d-flex justify-content-center col-12 hidden'>
+    <button type='button' class='btn btn-danger' >タイトルに戻る</button>
   </div>
   <%= image_tag ('buri.png'), size: '175x50', id: 'buri', class: 'left-start fish' %>
   <%= image_tag ('squid.png'), size: '130x70', id: 'squid', class: 'fish' %>
@@ -24,3 +28,4 @@
 </div>
 
 <%= javascript_pack_tag 'home/move_fish' %>
+<%= javascript_pack_tag 'home/look_into_sea' %>
