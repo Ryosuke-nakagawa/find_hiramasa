@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   #herokuapp.comから独自ドメインへリダイレクト
   before_action :ensure_domain
-  FQDN = 'find-hiramasa.com'
+  FQDN = 'www.find-hiramasa.com'
  
   # redirect correct server from herokuapp domain for SEO
   def ensure_domain
